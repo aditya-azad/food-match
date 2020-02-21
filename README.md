@@ -1,6 +1,7 @@
 # Food Match (UNDER CONSTRUCTION)
 
-An app that matches customers with desired restaurants.
+An app that finds best restaurants as per your tastes near you.
+Made for [Capital One Mind Sumo](https://www.mindsumo.com/contests/d052bcf8-4580-4922-95ef-a9f6ceaf0f10)contest.
 
 # Todos
 
