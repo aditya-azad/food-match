@@ -23,7 +23,3 @@ Made for [Capital One Mind Sumo](https://www.mindsumo.com/contests/d052bcf8-4580
     - Create a chat bot
     - Unique and interactive user interface 
     - Search feature for specific restaurants
-
-- Tasks
-    - Setup database and keys
-    - Push initial commit to heroku
