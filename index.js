@@ -25,6 +25,7 @@ app.use(passport.session());
 
 // initialize routes
 require('./routes/authRoutes')(app);
+require('./routes/yelpRoutes')(app);
 
 if (process.env.NODE_ENV == 'production') {
   // Express will serve up production assets

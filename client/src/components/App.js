@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Navbar from './navbar/Navbar';
-import Profile from './Profile';
+import Profile from './pages/Profile';
+import SearchResults from './pages/SearchResults';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
         <GlobalStyle/>
         <Navbar/>
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/search" component={SearchResults} />
       </ BrowserRouter>
     );
   }
