@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.get(
     '/api/search',
     (req, res) => {
-      yelpClient.search({term: 'starbucks coffee', location: 'indiana'})
+      yelpClient.search({term: req.query.term, location: req.query.location})
         .then(response => {res.json(response.jsonBody)})
         .catch(e => {
           res.send({error: JSON.parse(e.response.body).error});
