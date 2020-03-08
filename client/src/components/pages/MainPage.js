@@ -27,7 +27,6 @@ class MainPage extends Component {
   }
 
   renderRestaurants() {
-    if (this.props.restaurants === "") return (<></>)
     return (
       <div>
         {this.props.restaurants.map((item, index) => (
@@ -56,7 +55,7 @@ class MainPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    restaurants: state.yelp === null ? "" : state.yelp.businesses
+    restaurants: state.yelp === null ? [] : state.yelp.businesses
   }
 }
 
