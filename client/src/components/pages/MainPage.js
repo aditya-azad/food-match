@@ -27,15 +27,12 @@ class MainPage extends Component {
   }
 
   renderRestaurants() {
-    let restaurants = [];
-    for (let i = 0; i < this.props.restaurants.length; i++) {
-      restaurants.push(
-        <SearchItem key={i} restaurant={this.props.restaurants[i]} />
-      );
-    }
+    if (this.props.restaurants === "") return (<></>)
     return (
       <div>
-        {restaurants}
+        {this.props.restaurants.map((item, index) => (
+          <SearchItem key={index} restaurant={item} />
+        ))}
       </div>
     )
   }
