@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PageContainer, CenterContainer } from '../styleComponents';
 import * as actions from "../../actions";
 import { connect } from 'react-redux';
+import SearchItem from "../SearchItem";
 
 class MainPage extends Component {
 
@@ -25,6 +26,20 @@ class MainPage extends Component {
     });
   }
 
+  renderRestaurants() {
+    let restaurants = [];
+    for (let i = 0; i < this.props.restaurants.length; i++) {
+      restaurants.push(
+        <SearchItem key={i} restaurant={this.props.restaurants[i]} />
+      );
+    }
+    return (
+      <div>
+        {restaurants}
+      </div>
+    )
+  }
+
   render() {
     return (
       <PageContainer>
@@ -34,6 +49,7 @@ class MainPage extends Component {
             <input type="text" name="locationValue" value={this.state.locationValue} placeholder="Location" onChange={this.handleChange} />
             <input type="submit" value="Submit" />
           </form>
+          {this.renderRestaurants()}
         </CenterContainer>
       </PageContainer>
     );
@@ -41,4 +57,10 @@ class MainPage extends Component {
 
 }
 
-export default connect(null, actions)(MainPage);
+const mapStateToProps = (state) => {
+  return {
+    restaurants: state.yelp === null ? "" : state.yelp.businesses
+  }
+}
+
+export default connect(mapStateToProps, actions)(MainPage);

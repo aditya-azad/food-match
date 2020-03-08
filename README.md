@@ -22,4 +22,11 @@ Made for [Capital One Mind Sumo](https://www.mindsumo.com/contests/d052bcf8-4580
     - Display trends and stats about popular cuisines, quality cuisines, etc.
     - Create a chat bot
     - Unique and interactive user interface 
-    - Search feature for specific restaurants
+
+- Current Tasks
+    - Display the restaurants in a card format
+    - Make a store page for each restaurant
+    - Yelp should only return restaurants
+    - Plot the restaurant on the map and give directions
+    - Additional yelp parameters
+        - Pass the geolocation to yelp

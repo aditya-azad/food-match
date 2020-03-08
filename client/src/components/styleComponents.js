@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const PageContainer = styled.div`
@@ -6,8 +5,7 @@ export const PageContainer = styled.div`
   margin-top: 40px;
   align: center;
   display: flex;
-  justify-content: center;
-`;
+  justify-content: center; `;
 
 export const CenterContainer = styled.div`
   max-width: 700px;
