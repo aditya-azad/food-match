@@ -1,0 +1,34 @@
+
+Goals:
+  Requirements:
+    ✔ Deploy repo to heroku @done(20-03-12 23:28)
+    ✔ App must use Yelp's Fusion API @done(20-03-12 23:30)
+    ☐ App should be able to plot merchants on a map
+    ☐ App should be able to obtain user location via HTML5 Geolocation
+
+  Main goals:
+    ☐ A database of users using OAuth
+    ☐ Plot user and restaurants
+    ☐ Have some sort of directions/navigation using maps
+    ☐ Provide recommendations based on previous choices
+    ☐ Use initial questionnaire to select nearby restaurants
+
+  Side goals:
+    ☐ Display trends and stats about popular cuisines, quality cuisines, etc.
+    ☐ Create a chat bot
+    ☐ Unique and interactive user interface 
+
+Tasks:
+  ✔ Figure out how to get data from yelp API @done(20-03-12 23:30)
+  ☐ Yelp should only return restaurants
+  ☐ Sort the data according to mood and tastes
+  ☐ Make a store page for each restaurant
+  ☐ Plot the restaurant on the map and give directions
+  ☐ Give users the ability to save favourite restaurants
+  ☐ Additional yelp parameters
+    ☐ Pass the geolocation to yelp
+  ☐ Decoration
+    ☐ Finish navbar decorations
+    ☐ Finish main page decorations
+    ☐ Finish profile page decorations
+    ☐ Show restaurants in card format
