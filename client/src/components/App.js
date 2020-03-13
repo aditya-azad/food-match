@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Navbar from './navbar/Navbar';
+import Navbar from './Navbar';
 import Profile from './pages/Profile';
 import MainPage from './pages/MainPage';
 
