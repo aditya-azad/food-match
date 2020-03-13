@@ -25,6 +25,8 @@ Tasks:
   ☐ Make a store page for each restaurant
   ☐ Plot the restaurant on the map and give directions
   ☐ Give users the ability to save favourite restaurants
+  ☐ Refactor handlers of mainpage to arrow functions so that there is no need of a constructor
+  ☐ Hook up the yelp API to the search function of the site
   ☐ Additional yelp parameters
     ☐ Pass the geolocation to yelp
   ☐ Decoration

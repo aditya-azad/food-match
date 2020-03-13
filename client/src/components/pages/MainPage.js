@@ -6,7 +6,6 @@ import SearchItem from "../SearchItem";
 
 class MainPage extends Component {
 
-  // TODO: convert these handlers to arrow functions
   constructor(props) {
     super(props);
     this.state = {nameValue: "", locationValue: ""}
