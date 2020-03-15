@@ -27,7 +27,9 @@ Tasks:
   Additional yelp parameters
     Pass the geolocation to yelp
   Decoration
+    Make it mobile responsive: add theme system
     Finish navbar decorations
     Finish main page decorations
     Finish profile page decorations
+    Finish searchresults page decorations
     Show restaurants in card format
