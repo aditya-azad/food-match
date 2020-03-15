@@ -3,7 +3,6 @@ import { PageContainer } from '../styleComponents';
 import styled from "styled-components";
 import * as actions from "../../actions";
 import { connect } from 'react-redux';
-import SearchItem from "../SearchItem";
 
 import mainPageImage from "../../assets/main-pic.jpg";
 
@@ -33,18 +32,11 @@ class MainPage extends Component {
 
   handleKeypress = (event) => {
     if (event.which === 13 || event.key === 'Enter') {
-      this.handleSubmit(event);
+      if (this.state.searchValue !== "") {
+        this.handleSubmit(event);
+        this.props.history.push('/searchresults');
+      }
     }
-  }
-
-  renderRestaurants() {
-    return (
-      <div>
-        {this.props.restaurants.map((item, index) => (
-          <SearchItem key={index} restaurant={item} />
-        ))}
-      </div>
-    )
   }
 
   render() {
@@ -54,7 +46,6 @@ class MainPage extends Component {
           <p>Search restaurants near you.</p>
           <input spellcheck="false" type="text" name="searchValue" value={this.state.searchValue}  onChange={this.handleChange} />
         </Cover>
-        {this.renderRestaurants()}
       </PageContainer>
     );
   }
@@ -88,10 +79,4 @@ const Cover = styled.div`
   }
 `
 
-const mapStateToProps = (state) => {
-  return {
-    restaurants: state.yelp === null ? [] : state.yelp.businesses
-  }
-}
-
-export default connect(mapStateToProps, actions)(MainPage);
+export default connect(null, actions)(MainPage);

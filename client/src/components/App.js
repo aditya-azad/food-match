@@ -7,6 +7,7 @@ import * as actions from '../actions';
 import Navbar from './Navbar';
 import Profile from './pages/Profile';
 import MainPage from './pages/MainPage';
+import SearchResults from './pages/SearchResults';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/searchresults" component={SearchResults} />
         <Route exact path="/" component={MainPage} />
         <GlobalStyle/>
         <Navbar/>
