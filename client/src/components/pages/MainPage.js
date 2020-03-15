@@ -43,14 +43,64 @@ class MainPage extends Component {
     return (
       <PageContainer>
         <Cover>
-          <p>Search restaurants near you.</p>
-          <input spellcheck="false" type="text" name="searchValue" value={this.state.searchValue}  onChange={this.handleChange} />
+          <CoverContent>
+            <p>Search restaurants near you.</p>
+            <input spellCheck="false" type="text" name="searchValue" value={this.state.searchValue}  onChange={this.handleChange} />
+          </CoverContent>
         </Cover>
+        <FeaturesSection>
+          <div>
+            <p>Get directions to restaurants near you</p>
+          </div>
+          <div>
+            <p>Receive recommendations based on your tastes</p>
+          </div>
+          <div>
+            <p>Save your favourite restaurants</p>
+          </div>
+        </FeaturesSection>
       </PageContainer>
     );
   }
 
 }
+
+const FeaturesSection = styled.div `
+  display: flex;
+  justify-content: center;
+  padding: 70px 0px;
+  & div {
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    min-height: 50vh;
+    word-wrap: break-word;
+    flex: 1;
+    font-family: Roboto;
+    word-wrap: break-word;
+    background-color: red;
+  }
+`
+
+const CoverContent = styled.div`
+  margin: 0px 40px;
+  & p {
+    color: white;
+    font-size: 60px;
+    font-family: 'Raleway', 'sans-serif';
+  }
+  & input {
+    background: none;
+    width: 100%;
+    outline: 0;
+    border-width: 0 0 2px;
+    font-size: 50px;
+    color: grey;
+    border-color: red;
+  }
+`
 
 const Cover = styled.div`
   display: flex;
@@ -61,22 +111,7 @@ const Cover = styled.div`
   background-size: cover;
   width: 100%;
   padding-bottom: 50px;
-  height: 90vh;
-  & p {
-    color: white;
-    font-size: 60px;
-    padding: 10px;
-    font-family: 'Raleway', 'sans-serif';
-  }
-  & input {
-    background: none;
-    width: 60%;
-    outline: 0;
-    border-width: 0 0 2px;
-    font-size: 50px;
-    color: grey;
-    border-color: red;
-  }
+  height: 100vh;
 `
 
 export default connect(null, actions)(MainPage);
