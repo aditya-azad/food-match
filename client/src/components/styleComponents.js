@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const PageContainer = styled.div`
   width: 100%;
-  margin-top: 40px;
   align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center; `;
 
 export const CenterContainer = styled.div`

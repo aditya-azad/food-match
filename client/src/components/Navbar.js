@@ -115,11 +115,10 @@ const NavBar = styled.header`
   width: 100%;
   z-index: 11;
   padding: 0px 20px;
-  background-color: yellow;
+  background-color: ${props => (props.scrollDirection === 'none' ? '' : 'Black')};
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   height: ${props => (props.scrollDirection === 'none' ? '60px' : '40px')};
-  box-shadow: ${props => props.scrollDirection === 'up' ? `0 10px 30px -10px rgba(100, 100, 100, 0.7)` : 'none'};
-  transform: translateY(${props => (props.scrollDirection === 'down' ? '-40px' : '0px')});
+  box-shadow: ${props => props.scrollDirection === 'none' ? 'none' : `0 10px 30px -10px rgba(0, 0, 0, 0.7)`};
 `
 
 const FlexContainer = styled.div`
