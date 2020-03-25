@@ -1,4 +1,3 @@
-
 Goals:
   Requirements:
     App should be able to plot merchants on a map
@@ -16,7 +15,6 @@ Goals:
 
 Tasks:
   Search bar on task bar when scrolled down
-  Sort the data according to mood and tastes
   Make a store page for each restaurant
   Plot the restaurant on the map and give directions
   Give users the ability to save favourite restaurants

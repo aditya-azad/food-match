@@ -9,6 +9,5 @@ export const fetchUser = () =>  async (dispatch) => {
 
 export const fetchSearchResults = (searchValue) => async (dispatch) => {
   const res = await axios.get(`/api/search/?term=${searchValue}`);
-  //const res = await axios.get(`/api/search/?term=${searchTerm}&location=${searchLocation}`);
   dispatch({ type: SEARCH_RESTAURANT, payload: res.data });
 }

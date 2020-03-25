@@ -4,6 +4,7 @@ import styled from "styled-components";
 import * as actions from "../../actions";
 import { connect } from 'react-redux';
 
+import Layout from "../Layout";
 import mainPageImage from "../../assets/main-pic.jpg";
 
 class MainPage extends Component {
@@ -40,27 +41,29 @@ class MainPage extends Component {
 
   render() {
     return (
-      <PageContainer>
-        <Cover>
-          <CoverContent>
-            <p>Search restaurants near you.</p>
-            <form onSubmit={this.handleSubmit}>
-              <input spellCheck="false" type="text" name="searchValue"  onChange={this.handleChange} />
-            </form>
-          </CoverContent>
-        </Cover>
-        <FeaturesSection>
-          <div>
-            <p>Get directions to restaurants near you</p>
-          </div>
-          <div>
-            <p>Receive recommendations based on your tastes</p>
-          </div>
-          <div>
-            <p>Save your favourite restaurants</p>
-          </div>
-        </FeaturesSection>
-      </PageContainer>
+      <Layout isHome={true}>
+        <PageContainer>
+          <Cover>
+            <CoverContent>
+              <p>Search restaurants near you.</p>
+              <form onSubmit={this.handleSubmit}>
+                <input spellCheck="false" type="text" name="searchValue"  onChange={this.handleChange} />
+              </form>
+            </CoverContent>
+          </Cover>
+          <FeaturesSection>
+            <div>
+              <p>Get directions to restaurants near you</p>
+            </div>
+            <div>
+              <p>Receive recommendations based on your tastes</p>
+            </div>
+            <div>
+              <p>Save your favourite restaurants</p>
+            </div>
+          </FeaturesSection>
+        </PageContainer>
+      </Layout>
     );
   }
 
@@ -110,6 +113,7 @@ const Cover = styled.div`
   flex-direction: column;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${mainPageImage});
   background-size: cover;
+  background-position: center;
   width: 100%;
   padding-bottom: 50px;
   height: 100vh;

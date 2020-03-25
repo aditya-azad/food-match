@@ -1,16 +1,38 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 
 class SearchItem extends Component {
   render() {
     let restaurant = this.props.restaurant;
     return( 
-      <div>
-        <h2>{restaurant.name}</h2>  
-        <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state}</p>
-      </div>
+      <Card>
+        <div>
+          <h2>{restaurant.name}</h2>  
+          <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state}</p>
+        </div>
+          <Image src={restaurant.image_url} />
+      </Card>
     ) 
   }
 }
+
+const Card = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+  & img {
+    height: auto;
+    width: 50%;
+  }
+`
+const Image = styled.div`
+  background: url(${props => props.src});
+  background-size: cover;
+  width: 50%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+`
 
 export default SearchItem;
 

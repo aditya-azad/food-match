@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import SearchItem from "../SearchItem";
 import { connect } from 'react-redux';
+import styled from "styled-components";
 
+import Layout from "../Layout";
 class SearchResults extends Component {
   
   renderRestaurants() {
@@ -16,13 +18,29 @@ class SearchResults extends Component {
 
   render() {
     return (
-      <>
-        {this.renderRestaurants()}
-      </>
+      <Layout isHome={false}>
+        <Container>
+          <h1>Results</h1>
+          <Results>
+            {this.renderRestaurants()}
+          </Results>
+        </Container>
+      </Layout>
     )
   }
 
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+`
+
+const Results = styled.div`
+  width: 60%;
+`
 
 const mapStateToProps = (state) => {
   return {

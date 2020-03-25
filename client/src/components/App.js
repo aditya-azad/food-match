@@ -4,7 +4,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Navbar from './Navbar';
 import Profile from './pages/Profile';
 import MainPage from './pages/MainPage';
 import SearchResults from './pages/SearchResults';
@@ -22,7 +21,6 @@ class App extends Component {
         <Route exact path="/searchresults" component={SearchResults} />
         <Route exact path="/" component={MainPage} />
         <GlobalStyle/>
-        <Navbar/>
       </ BrowserRouter>
     );
   }

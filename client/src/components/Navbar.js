@@ -87,7 +87,7 @@ class Navbar extends Component {
   render() {
     const { scrollDirection } = this.state;
     return (
-      <NavBar scrollDirection={scrollDirection}>
+      <NavBar scrollDirection={scrollDirection} isHome={this.props.isHome}>
         <FlexContainer>
           <Brand>
             <a href="/">Food Match</a>
@@ -115,9 +115,9 @@ const NavBar = styled.header`
   width: 100%;
   z-index: 11;
   padding: 0px 20px;
-  background-color: ${props => (props.scrollDirection === 'none' ? '' : 'Black')};
+  background-color: ${props => (props.scrollDirection === 'none' && props.isHome ? '' : 'Black')};
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  height: ${props => (props.scrollDirection === 'none' ? '60px' : '40px')};
+  height: 60px};
   box-shadow: ${props => props.scrollDirection === 'none' ? 'none' : `0 10px 30px -10px rgba(0, 0, 0, 0.7)`};
 `
 
