@@ -19,7 +19,6 @@ class MainPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("off");
     if (this.state.searchValue !== "") {
       this.props.fetchSearchResults(this.state.searchValue);
       this.props.history.push('/searchresults');
