@@ -18,8 +18,12 @@ class MainPage extends Component {
   }
 
   handleSubmit = (event) => {
-    this.props.fetchSearchResults(this.state.searchValue);
     event.preventDefault();
+    console.log("off");
+    if (this.state.searchValue !== "") {
+      this.props.fetchSearchResults(this.state.searchValue);
+      this.props.history.push('/searchresults');
+    }
   }
 
   handleChange = (event) => {
@@ -32,10 +36,6 @@ class MainPage extends Component {
 
   handleKeypress = (event) => {
     if (event.which === 13 || event.key === 'Enter') {
-      if (this.state.searchValue !== "") {
-        this.handleSubmit(event);
-        this.props.history.push('/searchresults');
-      }
     }
   }
 
@@ -45,7 +45,9 @@ class MainPage extends Component {
         <Cover>
           <CoverContent>
             <p>Search restaurants near you.</p>
-            <input spellCheck="false" type="text" name="searchValue" value={this.state.searchValue}  onChange={this.handleChange} />
+            <form onSubmit={this.handleSubmit}>
+              <input spellCheck="false" type="text" name="searchValue"  onChange={this.handleChange} />
+            </form>
           </CoverContent>
         </Cover>
         <FeaturesSection>

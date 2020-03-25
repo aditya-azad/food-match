@@ -6,15 +6,13 @@ Goals:
 
   Main goals:
     A database of users using OAuth
-    Plot user and restaurants
-    Have some sort of directions/navigation using maps
-    Provide recommendations based on previous choices
-    Use initial questionnaire to select nearby restaurants
+    Plot user and restaurants and give directions
+    Ability to save the restaurants in a profile
 
   Side goals:
+    Provide recommendations based on previous choices
     Display trends and stats about popular cuisines, quality cuisines, etc.
     Create a chat bot
-    Unique and interactive user interface 
 
 Tasks:
   Search bar on task bar when scrolled down
@@ -31,5 +29,5 @@ Tasks:
     Finish navbar decorations
     Finish main page decorations
     Finish profile page decorations
-    Finish searchresults page decorations
+    Finish search results page decorations
     Show restaurants in card format
