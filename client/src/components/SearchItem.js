@@ -2,13 +2,30 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 
 class SearchItem extends Component {
+
+  renderCategories() {
+    let array = [];
+    let restaurant = this.props.restaurant;
+    for (let i = 0; i < restaurant.categories.length; i++) {
+      array.push(
+      <span key={i}>{restaurant.categories[i].title}</span>
+      );
+    }
+    return(
+      array
+    )
+  }
+
   render() {
     let restaurant = this.props.restaurant;
     return( 
       <Card>
         <div>
           <h2>{restaurant.name}</h2>  
-          <p>{restaurant.location.address1}, {restaurant.location.city}, {restaurant.location.state}</p>
+          <p>{restaurant.location.address1}</p>
+          <p>{restaurant.location.city}, {restaurant.location.state}</p>
+          <p>{restaurant.display_phone}</p>
+          {this.renderCategories()}
         </div>
           <Image src={restaurant.image_url} />
       </Card>
@@ -28,7 +45,7 @@ const Card = styled.div`
 const Image = styled.div`
   background: url(${props => props.src});
   background-size: cover;
-  width: 50%;
+  width: 40%;
   height: 200px;
   background-repeat: no-repeat;
   background-position: center;
