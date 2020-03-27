@@ -69,25 +69,18 @@ class MainPage extends Component {
 
 }
 
-const FeaturesSection = styled.div `
+const Cover = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 70px 0px;
-  & div {
-    margin: 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100px;
-    min-height: 50vh;
-    word-wrap: break-word;
-    flex: 1;
-    font-family: Roboto;
-    word-wrap: break-word;
-    background-color: red;
-  }
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${mainPageImage});
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding-bottom: 50px;
+  height: 100vh;
 `
-
 const CoverContent = styled.div`
   margin: 0px 40px;
   & p {
@@ -106,17 +99,23 @@ const CoverContent = styled.div`
   }
 `
 
-const Cover = styled.div`
+const FeaturesSection = styled.div `
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${mainPageImage});
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  padding-bottom: 50px;
-  height: 100vh;
+  padding: 70px 0px;
+  & div {
+    margin: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    min-height: 50vh;
+    word-wrap: break-word;
+    flex: 1;
+    font-family: Roboto;
+    word-wrap: break-word;
+    background-color: red;
+  }
 `
 
 export default connect(null, actions)(MainPage);

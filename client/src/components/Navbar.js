@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
+// Source: Brittany Chiang, https://brittanychiang.com/
 class Navbar extends Component {
 
   state = {
