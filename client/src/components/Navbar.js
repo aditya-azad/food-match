@@ -74,7 +74,7 @@ class Navbar extends Component {
         return;
       case false:
         return (
-          <li><a href="/auth/google">Login with Google</a></li>
+          <li><a href="/auth/google">Login</a></li>
         );
       default:
         return [
@@ -108,13 +108,18 @@ function mapStateToProps({ auth }) {
 export default connect(mapStateToProps)(Navbar);
 
 const NavBar = styled.header`
+  a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
   position: fixed;
   display: flex;
   align-items: center;
   top: 0;
   width: 100%;
   z-index: 11;
-  padding: 0px 20px;
+  padding: 0px 40px;
   background-color: ${props => (props.scrollDirection === 'none' && props.isHome ? '' : 'Black')};
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   height: 60px};
@@ -133,23 +138,28 @@ const Brand = styled.div `
   list-style-type: none;
   display: flex;
   margin: auto 0;
-  & a {
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  font-size: 30px;
+  font-family: 'Lobster', 'cursive';
 `;
 
 const MenuList = styled.ul `
   list-style-type: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
   display: flex;
   margin: auto 0;
-  & li {
-    margin: 0.5rem;
+
+  li {
+    margin: 1rem;
   }
-  & a {
+
+  a:hover {
+    color: #8B2A07;
+  }
+
+  a {
+    color: #BDB8B4;
+    transition: color 0.5s;
     text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
   }
 `;

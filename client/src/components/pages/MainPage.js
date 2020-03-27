@@ -101,8 +101,8 @@ const CoverContent = styled.div`
     outline: 0;
     border-width: 0 0 2px;
     font-size: 50px;
-    color: grey;
-    border-color: red;
+    color: #BDB8B4;
+    border-color: #BDB8B4;
   }
 `
 
