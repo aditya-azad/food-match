@@ -14,7 +14,7 @@ Goals:
     Create a chat bot
 
 Tasks:
-  Search bar on task bar when scrolled down
+  User should not be able to access profile if not logged in
   Make a store page for each restaurant
   Plot the restaurant on the map and give directions
   Give users the ability to save favourite restaurants
