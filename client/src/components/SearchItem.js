@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 
+import StorePopup from "./StorePopup";
+
 class SearchItem extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { showPopup: false };
+  }
+
+  openPopup = () => {
+    this.setState({
+      showPopup: true,
+    })
+  }
+
+  closePopup = () => {
+    this.setState({
+      showPopup: false,
+    })
+  }
 
   renderCategories() {
     let array = [];
@@ -21,6 +40,11 @@ class SearchItem extends Component {
     return( 
       <Card>
         <div>
+          <button onClick={this.openPopup}> Click me </button>
+          {this.state.showPopup ?
+            <StorePopup store={restaurant} closePopup={this.closePopup}/>
+            :null
+          }
           <h2>{restaurant.name}</h2>  
           <p>{restaurant.location.address1}</p>
           <p>{restaurant.location.city}, {restaurant.location.state}</p>

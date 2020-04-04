@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import styled from "styled-components";
 
 import Layout from "../Layout";
+
 class SearchResults extends Component {
   
   renderRestaurants() {
