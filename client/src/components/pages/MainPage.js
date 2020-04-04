@@ -3,6 +3,7 @@ import { PageContainer } from '../styleComponents';
 import styled from "styled-components";
 import * as actions from "../../actions";
 import { connect } from 'react-redux';
+import { geolocated } from 'react-geolocated';
 
 import Layout from "../Layout";
 import mainPageImage from "../../assets/main-pic.jpg";
@@ -11,17 +12,31 @@ class MainPage extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {searchValue: ""}
+    this.state = {
+      searchValue: "",
+      geolocationEnabled: false
+    };
   }
 
   componentDidMount() {
-    window.addEventListener('keyup', e => this.handleKeypress(e) );
+    setTimeout( () => {
+      this.setState({
+        geolocationEnabled: (this.props.isGeolocationEnabled && this.props.isGeolocationAvailable)
+      })
+    }, 500)
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.searchValue !== "") {
-      this.props.fetchSearchResults(this.state.searchValue);
+    let searchTerm = this.state.searchValue;
+    if (searchTerm !== "") {
+      searchTerm = searchTerm.split(","); 
+      if (searchTerm.length === 2) { // user specified a location
+        this.props.fetchSearchResults(searchTerm[0], searchTerm[1]);
+      } else {
+        if (this.state.geolocationEnabled) this.props.fetchSearchResults(searchTerm[0], this.props.coords.latitude, this.props.coords.longitude) ;
+        else this.props.fetchSearchResults(searchTerm[0]);
+      }
       this.props.history.push('/searchresults');
     }
   }
@@ -34,11 +49,6 @@ class MainPage extends Component {
     });
   }
 
-  handleKeypress = (event) => {
-    if (event.which === 13 || event.key === 'Enter') {
-    }
-  }
-
   render() {
     return (
       <Layout isHome={true}>
@@ -47,7 +57,12 @@ class MainPage extends Component {
             <CoverContent>
               <p>Search restaurants near you.</p>
               <form onSubmit={this.handleSubmit}>
-                <input spellCheck="false" type="text" name="searchValue"  onChange={this.handleChange} />
+                <input placeholder= {this.state.geolocationEnabled ? "restaurant" : "restaurant, city"}
+                       spellCheck="false"
+                       type="text"
+                       name="searchValue"
+                       onChange={this.handleChange}
+                />
               </form>
             </CoverContent>
           </Cover>
@@ -118,4 +133,12 @@ const FeaturesSection = styled.div `
   }
 `
 
-export default connect(null, actions)(MainPage);
+export default connect(null, actions) (
+  geolocated({
+    positionOptions: {
+      enableHighAccuracy: false
+    },
+    isOptimisticGeolocationEnabled: false,
+    userDecisionTimeout: 5000,
+  })(MainPage)
+);

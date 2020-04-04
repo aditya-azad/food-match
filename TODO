@@ -1,30 +1,15 @@
 Goals:
   Requirements:
     App should be able to plot merchants on a map
-    App should be able to obtain user location via HTML5 Geolocation
 
   Main goals:
-    A database of users using OAuth
     Plot user and restaurants and give directions
     Ability to save the restaurants in a profile
 
   Side goals:
     Provide recommendations based on previous choices
     Display trends and stats about popular cuisines, quality cuisines, etc.
-    Create a chat bot
 
 Tasks:
   User should not be able to access profile if not logged in
   Make a store page for each restaurant
-  Plot the restaurant on the map and give directions
-  Give users the ability to save favourite restaurants
-  Hook up the yelp API to the search function of the site
-  Additional yelp parameters
-    Pass the geolocation to yelp
-  Decoration
-    Make it mobile responsive: add theme system
-    Finish navbar decorations
-    Finish main page decorations
-    Finish profile page decorations
-    Finish search results page decorations
-    Show restaurants in card format
