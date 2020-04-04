@@ -11,6 +11,8 @@ import { fromLonLat } from 'ol/proj'
 import Point from 'ol/geom/Point';
 import {Icon, Style} from 'ol/style';
 
+import DotImage from "../assets/dot.png";
+
 class StoreMap extends Component {
  
   constructor(props) {
@@ -27,9 +29,10 @@ class StoreMap extends Component {
     })
     marker.setStyle(new Style({
       image: new Icon({
-        color: '#4271AE',
+        color: '#e02702',
         crossOrigin: 'anonymous',
-        src: '../assets/dot.png'
+        src: DotImage,
+        imgSize: [20, 20]
       })
     }));
     var vectorSource = new VectorSource({

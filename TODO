@@ -1,15 +1,8 @@
-Goals:
-  Requirements:
-    App should be able to plot merchants on a map
-
-  Main goals:
-    Plot user and restaurants and give directions
+Tasks:
+  Main:
     Ability to save the restaurants in a profile
+    User should not be able to access profile if not logged in
 
-  Side goals:
+  Side:
     Provide recommendations based on previous choices
     Display trends and stats about popular cuisines, quality cuisines, etc.
-
-Tasks:
-  User should not be able to access profile if not logged in
-  Make a store page for each restaurant
