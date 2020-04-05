@@ -4,6 +4,9 @@ Tasks:
     User should not be able to access profile if not logged in
 
   Fix:
+    Update app name
+      All the names in this repo
+      Google OAuth fix
     The location does not work when doing first search quickly
     Click outside the box in search results to go back
     On mobile, some way to go back to search results after clicking the store
