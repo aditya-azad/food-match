@@ -91,7 +91,7 @@ class Navbar extends Component {
       <NavBar scrollDirection={scrollDirection} isHome={this.props.isHome}>
         <FlexContainer>
           <Brand>
-            <a href="/">Food Match</a>
+            <a href="/">Food Route</a>
           </Brand>
           <MenuList>
             {this.renderMenu()}
