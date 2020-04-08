@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import axios from 'axios';
 
 import StorePopup from "./StorePopup";
 
@@ -8,6 +9,10 @@ class SearchItem extends Component {
   constructor(props) {
     super(props);
     this.state = { showPopup: false };
+  }
+
+  saveRestaurant = () => {
+    axios.post(`/api/save_restaurant`, {restaurant_id: this.props.restaurant.id});
   }
 
   openPopup = () => {
@@ -38,9 +43,9 @@ class SearchItem extends Component {
   render() {
     let restaurant = this.props.restaurant;
     return( 
-      <Card>
-        <div>
-          <button onClick={this.openPopup}> Click me </button>
+      <Card >
+        <button onClick={this.saveRestaurant}> Save </button>
+        <div onClick={this.openPopup}>
           {this.state.showPopup ?
             <StorePopup store={restaurant} closePopup={this.closePopup}/>
             :null
@@ -64,6 +69,9 @@ const Card = styled.div`
   & img {
     height: auto;
     width: 50%;
+  }
+  & div {
+    cursor: pointer;
   }
 `
 const Image = styled.div`

@@ -1,7 +1,32 @@
 const yelpClient = require('../services/yelp').client;
+const mongoose = require('mongoose');
+const requireLogin = require('../middlewares/requireLogin');
 
-// all the params passed to the url like /?a=23&b=21 gets attached to req.query object
+const User = mongoose.model('users');
+
 module.exports = (app) => {
+  app.post(
+    '/api/save_restaurant', requireLogin, 
+    (req, res) => {
+      let userID = req.user.id;
+      let restaurant = req.body.restaurant_id;
+      let conditions = { _id: userID, 'restaurants': { $ne: restaurant }};
+      let update = { $addToSet: { restaurants: restaurant } };
+      User.findOneAndUpdate(conditions, update).exec();
+    }
+  );
+
+  app.post(
+    '/api/get_restaurant_by_id',
+    (req, res) => {
+      yelpClient.business(
+        req.body.restaurant_id
+      ).then(response => {
+        res.send(response);
+      });
+    }
+  )
+
   app.get(
     '/api/search',
     (req, res) => {

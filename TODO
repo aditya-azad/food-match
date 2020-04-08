@@ -1,15 +1,14 @@
-Tasks:
-  Main:
-    Ability to save the restaurants in a profile
-    Make routes to the restaurant from current location
+Main:
+- Ability to save the restaurants in a profile
+  - Ability to delete
+  - User should be able to save only if logged in
+- Make routes to the restaurant from current location
+- The location does not work when doing first search quickly
+- Create a you need to login page
+- Click outside the box in search results to go back
+- On mobile, some way to go back to search results after clicking the store
+- Decoration
 
-  Fix:
-    The location does not work when doing first search quickly
-    Create a you need to login page
-    Click outside the box in search results to go back
-    On mobile, some way to go back to search results after clicking the store
-    Decoration
-
-  Side:
-    Provide recommendations based on previous choices
-    Display trends and stats about popular cuisines, quality cuisines, etc.
+Side:
+- Provide recommendations based on previous choices
+- Display trends and stats about popular cuisines, quality cuisines, etc.
