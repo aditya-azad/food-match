@@ -16,11 +16,11 @@ module.exports = (app) => {
     }
   );
 
-  app.post(
+  app.get(
     '/api/get_restaurant_by_id',
     (req, res) => {
       yelpClient.business(
-        req.body.restaurant_id
+        req.query.restaurant_id
       ).then(response => {
         res.send(response);
       });

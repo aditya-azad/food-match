@@ -8,8 +8,10 @@ export const MainPageContainer = styled.div`
   justify-content: center; `;
 
 export const GeneralPageContainer = styled.div`
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px;
+  justify-content: center;
+  min-width: 60%;
 `

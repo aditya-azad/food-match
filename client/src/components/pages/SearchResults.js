@@ -23,9 +23,7 @@ class SearchResults extends Component {
       <Layout isHome={false}>
         <GeneralPageContainer>
           <h1>Results</h1>
-          <Results>
-            {this.renderRestaurants()}
-          </Results>
+          {this.renderRestaurants()}
         </GeneralPageContainer>
       </Layout>
     )
@@ -34,9 +32,6 @@ class SearchResults extends Component {
 }
 
 
-const Results = styled.div`
-  width: 60%;
-`
 
 const mapStateToProps = (state) => {
   return {
