@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import styled from "styled-components";
+import { NavBar, FlexContainer, Brand, MenuList } from './styleComponents';
 
 // Source: Brittany Chiang, https://brittanychiang.com/
 class Navbar extends Component {
@@ -107,60 +107,3 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Navbar);
-
-const NavBar = styled.header`
-  a {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  position: fixed;
-  display: flex;
-  align-items: center;
-  top: 0;
-  width: 100%;
-  z-index: 11;
-  padding: 0px 40px;
-  background-color: ${props => (props.scrollDirection === 'none' && props.isHome ? '' : 'Black')};
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  height: 60px};
-  box-shadow: ${props => props.scrollDirection === 'none' ? 'none' : `0 10px 30px -10px rgba(0, 0, 0, 0.7)`};
-`
-
-const FlexContainer = styled.div`
-  display: flex;
-  position: relative;
-  width: 100%;
-  justify-content: space-between;
-  z-index: 12;
-`;
-
-const Brand = styled.div `
-  list-style-type: none;
-  display: flex;
-  margin: auto 0;
-  font-size: 30px;
-  font-family: 'Lobster', 'cursive';
-`;
-
-const MenuList = styled.ul `
-  list-style-type: none;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 22px;
-  display: flex;
-  margin: auto 0;
-
-  li {
-    margin: 1rem;
-  }
-
-  a:hover {
-    color: #8B2A07;
-  }
-
-  a {
-    color: #BDB8B4;
-    transition: color 0.5s;
-    text-transform: uppercase;
-  }
-`;

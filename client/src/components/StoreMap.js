@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Map from 'ol/Map';
 import View from 'ol/View';
-import styled from "styled-components";
-
 import { XYZ as XYZSource} from 'ol/source'
 import Feature from 'ol/Feature';
 import VectorSource from 'ol/source/Vector';
@@ -10,8 +8,8 @@ import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
 import { fromLonLat } from 'ol/proj'
 import Point from 'ol/geom/Point';
 import {Icon, Style} from 'ol/style';
-
-import DotImage from "../assets/dot.png";
+import DotImage from '../assets/dot.png';
+import { MapContainer } from './styleComponents';
 
 class StoreMap extends Component {
  
@@ -62,10 +60,5 @@ class StoreMap extends Component {
   }
 
 }
-
-const MapContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`
 
 export default StoreMap;

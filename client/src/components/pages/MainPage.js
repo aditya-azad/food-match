@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { MainPageContainer } from '../styleComponents';
-import styled from "styled-components";
-import * as actions from "../../actions";
+import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import { geolocated } from 'react-geolocated';
-
-import Layout from "../Layout";
-import mainPageImage from "../../assets/main-pic.jpg";
+import { Cover, CoverContent, MainPageContainer, FeaturesSection } from '../styleComponents';
+import Layout from '../Layout';
 
 class MainPage extends Component {
 
@@ -84,54 +81,6 @@ class MainPage extends Component {
 
 }
 
-const Cover = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(${mainPageImage});
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  padding-bottom: 50px;
-  height: 100vh;
-`
-const CoverContent = styled.div`
-  margin: 0px 40px;
-  & p {
-    color: white;
-    font-size: 60px;
-    font-family: 'Raleway', 'sans-serif';
-  }
-  & input {
-    background: none;
-    width: 100%;
-    outline: 0;
-    border-width: 0 0 2px;
-    font-size: 50px;
-    color: #BDB8B4;
-    border-color: #BDB8B4;
-  }
-`
-
-const FeaturesSection = styled.div `
-  display: flex;
-  justify-content: center;
-  padding: 70px 0px;
-  & div {
-    margin: 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100px;
-    min-height: 50vh;
-    word-wrap: break-word;
-    flex: 1;
-    font-family: Roboto;
-    word-wrap: break-word;
-    background-color: red;
-  }
-`
 
 export default connect(null, actions) (
   geolocated({

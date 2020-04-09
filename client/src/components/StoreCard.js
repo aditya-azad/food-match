@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
 import axios from 'axios';
-
-import StorePopup from "./StorePopup";
+import StorePopup from './StorePopup';
+import { Image, Card } from './styleComponents';
 
 class StoreCard extends Component {
 
@@ -61,27 +60,6 @@ class StoreCard extends Component {
     ) 
   }
 }
-
-const Card = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0px;
-  & img {
-    height: auto;
-    width: 50%;
-  }
-  & div {
-    cursor: pointer;
-  }
-`
-const Image = styled.div`
-  background: url(${props => props.src});
-  background-size: cover;
-  width: 40%;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-`
 
 export default StoreCard;
 

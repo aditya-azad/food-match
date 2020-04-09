@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { GlobalStyle } from './styleComponents';
 import * as actions from '../actions';
-
 import Profile from './pages/Profile';
 import MainPage from './pages/MainPage';
 import SearchResults from './pages/SearchResults';
@@ -28,13 +27,3 @@ class App extends Component {
 }
 
 export default connect(null, actions)(App);
-
-const GlobalStyle = createGlobalStyle`
-  *,
-  *::after,
-  *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`

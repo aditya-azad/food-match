@@ -31,8 +31,6 @@ class SearchResults extends Component {
 
 }
 
-
-
 const mapStateToProps = (state) => {
   return {
     restaurants: state.yelp === null ? [] : state.yelp.businesses

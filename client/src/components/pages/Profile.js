@@ -46,7 +46,7 @@ class Profile extends Component {
       {this.checkLogin() ? <p>You need to login</p> :
       <Layout isHome={false}>
         <GeneralPageContainer>
-          <h1>Profile</h1>
+          <h1>Your Restaurants</h1>
           {this.renderRestaurants()}
         </GeneralPageContainer>
       </Layout>

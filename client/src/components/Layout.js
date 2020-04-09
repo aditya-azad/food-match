@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from './Navbar';
-import styled from "styled-components";
+import { LayoutContainer } from './styleComponents';
 
 class Layout extends Component {
   render() {
@@ -14,12 +14,5 @@ class Layout extends Component {
     );
   }
 }
-
-const LayoutContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 export default Layout;
