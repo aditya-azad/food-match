@@ -29,7 +29,7 @@ export const MainPageContainer = styled.div`
 
 export const GeneralPageContainer = styled.div`
   padding-top: 80px;
-  & h1 {
+  h1 {
     font-family: 'Raleway', 'sans-serif';
     font-size: 2.5em;
   }
@@ -54,12 +54,12 @@ export const Cover = styled.div`
 
 export const CoverContent = styled.div`
   margin: 0px 40px;
-  & p {
+  p {
     color: white;
     font-size: 60px;
     font-family: 'Raleway', 'sans-serif';
   }
-  & input {
+  input {
     background: none;
     width: 100%;
     outline: 0;
@@ -74,7 +74,7 @@ export const FeaturesSection = styled.div `
   display: flex;
   justify-content: center;
   padding: 70px 0px;
-  & div {
+  div {
     margin: 0px 40px;
     display: flex;
     flex-direction: column;
@@ -143,19 +143,16 @@ export const Brand = styled.div `
 
 export const MenuList = styled.ul `
   list-style-type: none;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 22px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 21px;
   display: flex;
   margin: auto 0;
-
   li {
     margin: 1rem;
   }
-
   a:hover {
     color: #8B2A07;
   }
-
   a {
     color: #BDB8B4;
     transition: color 0.5s;
@@ -167,11 +164,11 @@ export const Card = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0px;
-  & img {
+  img {
     height: auto;
     width: 50%;
   }
-  & div {
+  div {
     cursor: pointer;
   }
 `
