@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
-export const PageContainer = styled.div`
+export const MainPageContainer = styled.div`
   width: 100%;
   align: center;
   display: flex;
   flex-direction: column;
   justify-content: center; `;
 
-export const CenterContainer = styled.div`
-  max-width: 700px;
-  margin: 2rem;
-`;
+export const GeneralPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 70px;
+`

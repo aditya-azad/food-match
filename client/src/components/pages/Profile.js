@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { PageContainer, CenterContainer } from '../styleComponents';
+import { GeneralPageContainer } from '../styleComponents';
 import Layout from "../Layout";
 
 class Profile extends Component {
@@ -15,11 +15,9 @@ class Profile extends Component {
       <>
       {this.checkLogin() ? <p>You need to login</p> :
       <Layout isHome={false}>
-        <PageContainer>
-          <CenterContainer>
-            <h1>Profile</h1>
-          </CenterContainer>
-        </PageContainer>
+        <GeneralPageContainer>
+          <h1>Profile</h1>
+        </GeneralPageContainer>
       </Layout>
       }
       </>

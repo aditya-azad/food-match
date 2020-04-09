@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PageContainer } from '../styleComponents';
+import { MainPageContainer } from '../styleComponents';
 import styled from "styled-components";
 import * as actions from "../../actions";
 import { connect } from 'react-redux';
@@ -52,7 +52,7 @@ class MainPage extends Component {
   render() {
     return (
       <Layout isHome={true}>
-        <PageContainer>
+        <MainPageContainer>
           <Cover>
             <CoverContent>
               <p>Search restaurants near you.</p>
@@ -77,7 +77,7 @@ class MainPage extends Component {
               <p>Save your favourite restaurants</p>
             </div>
           </FeaturesSection>
-        </PageContainer>
+        </MainPageContainer>
       </Layout>
     );
   }

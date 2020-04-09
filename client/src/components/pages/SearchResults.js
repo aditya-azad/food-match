@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import SearchItem from "../SearchItem";
+import StoreCard from "../StoreCard";
 import { connect } from 'react-redux';
 import styled from "styled-components";
 
 import Layout from "../Layout";
+import { GeneralPageContainer } from '../styleComponents';
 
 class SearchResults extends Component {
   
@@ -11,7 +12,7 @@ class SearchResults extends Component {
     return (
       <div>
         {this.props.restaurants.map((item, index) => (
-          <SearchItem key={index} restaurant={item} />
+          <StoreCard key={index} restaurant={item} />
         ))}
       </div>
     )
@@ -20,24 +21,18 @@ class SearchResults extends Component {
   render() {
     return (
       <Layout isHome={false}>
-        <Container>
+        <GeneralPageContainer>
           <h1>Results</h1>
           <Results>
             {this.renderRestaurants()}
           </Results>
-        </Container>
+        </GeneralPageContainer>
       </Layout>
     )
   }
 
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 70px;
-`
 
 const Results = styled.div`
   width: 60%;

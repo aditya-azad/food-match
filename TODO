@@ -1,10 +1,9 @@
 Main:
-- Ability to save the restaurants in a profile
-  - Ability to delete
-  - User should be able to save only if logged in
+- Display restaurants in profile
+- Create a you need to login page
+- Ability to delete restaurants from profile
 - Make routes to the restaurant from current location
 - The location does not work when doing first search quickly
-- Create a you need to login page
 - Click outside the box in search results to go back
 - On mobile, some way to go back to search results after clicking the store
 - Decoration

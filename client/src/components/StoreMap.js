@@ -15,10 +15,6 @@ import DotImage from "../assets/dot.png";
 
 class StoreMap extends Component {
  
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     let latitude = this.props.latitude;
     let longitude = this.props.longitude;
@@ -39,7 +35,7 @@ class StoreMap extends Component {
       features: [marker]
     });
 
-    const map = new Map({
+    new Map({
       target: 'map',
       layers: [
         new TileLayer({
