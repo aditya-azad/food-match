@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { GeneralPageContainer } from '../styleComponents';
 import StoreCard from '../StoreCard';
 import Layout from '../Layout';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 class Profile extends Component {
@@ -43,8 +44,8 @@ class Profile extends Component {
   render() {
     return (
       <>
-      {this.checkLogin() ? <p>You need to login</p> :
-      <Layout isHome={false}>
+      {this.checkLogin() ? <Redirect to="/login_redirect"/> :
+      <Layout>
         <GeneralPageContainer>
           <h1>Your Restaurants</h1>
           {this.renderRestaurants()}

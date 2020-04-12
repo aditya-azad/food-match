@@ -6,6 +6,7 @@ import * as actions from '../actions';
 import Profile from './pages/Profile';
 import MainPage from './pages/MainPage';
 import SearchResults from './pages/SearchResults';
+import LoginRedirect from './pages/LoginRedirect';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/searchresults" component={SearchResults} />
         <Route exact path="/" component={MainPage} />
+        <Route exact path="/login_redirect" component={LoginRedirect} />
         <GlobalStyle/>
       </ BrowserRouter>
     );

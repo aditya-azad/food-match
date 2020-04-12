@@ -20,7 +20,7 @@ class SearchResults extends Component {
 
   render() {
     return (
-      <Layout isHome={false}>
+      <Layout>
         <GeneralPageContainer>
           <h1>Results</h1>
           {this.renderRestaurants()}

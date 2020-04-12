@@ -48,7 +48,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <Layout isHome={true}>
+      <Layout isHome>
         <MainPageContainer>
           <Cover>
             <CoverContent>

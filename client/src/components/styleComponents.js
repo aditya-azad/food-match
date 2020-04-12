@@ -210,3 +210,19 @@ export const InnerPopup = styled.div`
   background: white;
 `
 
+export const Message = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 10vh;
+    font-family: "Roboto"
+  }
+  a {
+    color: black;
+    text-decoration: underline;
+
+  }
+`
