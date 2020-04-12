@@ -164,6 +164,7 @@ export const Card = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0px;
+  border: 1px grey;
   img {
     height: auto;
     width: 50%;

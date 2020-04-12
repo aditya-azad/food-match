@@ -42,7 +42,7 @@ class StoreCard extends Component {
   render() {
     let restaurant = this.props.restaurant;
     return( 
-      <Card >
+      <Card>
         <button onClick={this.saveRestaurant}> Save </button>
         <div onClick={this.openPopup}>
           {this.state.showPopup ?

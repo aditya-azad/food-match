@@ -11,23 +11,33 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: []
+      restaurants: [],
+      loggedIn: true
     }
+  }
+
+  componentDidMount() {
+    this.checkLogin();
   }
 
   getRestaurants = async () => {
-    let restaurantIDs = this.props.auth.restaurants;
-    let restaurants = [];
-    for (let i = 0; i < restaurantIDs.length; i++ ) {
-      await axios.get(`/api/get_restaurant_by_id/?restaurant_id=${restaurantIDs[i]}`)
-        .then( res => restaurants.push(res.data.jsonBody) );
+    if (this.props.auth) {
+      let restaurantIDs = this.props.auth.restaurants;
+      let restaurants = [];
+      for (let i = 0; i < restaurantIDs.length; i++ ) {
+        await axios.get(`/api/get_restaurant_by_id/?restaurant_id=${restaurantIDs[i]}`)
+          .then( res => restaurants.push(res.data.jsonBody) );
+      }
+      this.setState({ restaurants });
     }
-    this.setState({ restaurants });
   }
 
   checkLogin = () => {
-    if (!this.props.auth) return true;
-    return false;
+    if (!this.props.auth) {
+      this.setState(
+        {loggedIn: false}
+      )
+    }
   }
 
   renderRestaurants() {
@@ -44,7 +54,7 @@ class Profile extends Component {
   render() {
     return (
       <>
-      {this.checkLogin() ? <Redirect to="/login_redirect"/> :
+      {this.state.loggedIn === false ? <Redirect to="/login_redirect"/> :
       <Layout>
         <GeneralPageContainer>
           <h1>Your Restaurants</h1>

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import StoreCard from "../StoreCard";
 import { connect } from 'react-redux';
-import styled from "styled-components";
 
 import Layout from "../Layout";
 import { GeneralPageContainer } from '../styleComponents';

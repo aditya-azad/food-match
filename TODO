@@ -1,11 +1,10 @@
-Main:
-- Ability to delete restaurants from profile
-- Make routes to the restaurant from current location
-- The location does not work when doing first search quickly
-- Click outside the box in search results to go back
-- On mobile, some way to go back to search results after clicking the store
-- Decoration
-
-Side:
-- Provide recommendations based on previous choices
-- Display trends and stats about popular cuisines, quality cuisines, etc.
+- Ability to delete restaurants from profile.
+- Make routes to the restaurant from current location.
+- Display recently added restaurants in main page.
+- UI
+  - Store cards 
+  - Main page
+  - Click outside the box in search results to go back
+  - On mobile, some way to go back to search results after clicking the store
+  - A loading animation before data loads react
+  - Responsiveness
