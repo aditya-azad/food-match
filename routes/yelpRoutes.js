@@ -16,6 +16,17 @@ module.exports = (app) => {
     }
   );
 
+  app.post(
+    '/api/delete_restaurant', requireLogin, 
+    (req, res) => {
+      let userID = req.user.id;
+      let restaurant = req.body.restaurant_id;
+      let conditions = { _id: userID };
+      let update = { $pull: { restaurants: restaurant } };
+      User.update(conditions, update).exec();
+    }
+  );
+
   app.get(
     '/api/get_restaurant_by_id',
     (req, res) => {
