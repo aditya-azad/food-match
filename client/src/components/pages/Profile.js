@@ -17,7 +17,10 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    this.checkLogin();
+    setTimeout(() => {
+      this.checkLogin();
+      this.getRestaurants();
+    }, 1000);
   }
 
   getRestaurants = async () => {
@@ -41,9 +44,8 @@ class Profile extends Component {
   }
 
   renderRestaurants() {
-    this.getRestaurants();
     return (
-      <div>
+      <div style={{width: "100%"}}>
         {this.state.restaurants.map((item, index) => (
           <StoreCard key={index} restaurant={item} />
         ))}
@@ -52,18 +54,20 @@ class Profile extends Component {
   }
 
   render() {
-    return (
-      <>
-      {this.state.loggedIn === false ? <Redirect to="/login_redirect"/> :
-      <Layout>
-        <GeneralPageContainer>
-          <h1>Your Restaurants</h1>
-          {this.renderRestaurants()}
-        </GeneralPageContainer>
-      </Layout>
-      }
-      </>
-    );
+    if (this.state.loggedIn === false) {
+      return (
+        <Redirect to="/login_redirect"/>
+      )
+    } else {
+      return (
+        <Layout>
+          <GeneralPageContainer>
+            <h1>Your Restaurants</h1>
+            {this.renderRestaurants()}
+          </GeneralPageContainer>
+        </Layout>
+      );
+    }
   }
 };
 

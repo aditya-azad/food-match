@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import StorePopup from './StorePopup';
-import { Image, Card } from './styleComponents';
+import { Image, Card, InnerCard, StoreInformation } from './styleComponents';
 import { connect } from 'react-redux';
 
 class StoreCard extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { showPopup: false };
+    this.state = {
+      showPopup: false,
+      showSaveButton: this.props.auth.restaurants.indexOf(this.props.restaurant.id) !== -1 ? false : true
+    };
   }
 
   saveRestaurant = () => {
+    this.setState({showSaveButton: false})
     axios.post(`/api/save_restaurant`, {restaurant_id: this.props.restaurant.id});
   }
 
   deleteRestaurant = () => {
+    this.setState({showSaveButton: true})
     axios.post(`/api/delete_restaurant`, {restaurant_id: this.props.restaurant.id});
   }
 
@@ -48,22 +53,26 @@ class StoreCard extends Component {
     let restaurant = this.props.restaurant;
     return( 
       <Card>
-        {this.props.auth.restaurants.indexOf(restaurant.id) !== -1 ?
-          <button onClick={this.deleteRestaurant}>Delete</button> :
-          <button onClick={this.saveRestaurant}>Save</button>
-        }
-        <div onClick={this.openPopup}>
+        <InnerCard>
           {this.state.showPopup ?
             <StorePopup store={restaurant} closePopup={this.closePopup}/>
             :null
           }
-          <h2>{restaurant.name}</h2>  
-          <p>{restaurant.location.address1}</p>
-          <p>{restaurant.location.city}, {restaurant.location.state}</p>
-          <p>{restaurant.display_phone}</p>
-          {this.renderCategories()}
-        </div>
+          <StoreInformation>
+            <div>
+              <h2 style={{cursor: "pointer"}} onClick={this.openPopup}>{restaurant.name}</h2>  
+              <p>{restaurant.location.address1}</p>
+              <p>{restaurant.location.city}, {restaurant.location.state}</p>
+              <p>{restaurant.display_phone}</p>
+              {this.renderCategories()}
+            </div>
+            { this.state.showSaveButton ?
+              <button onClick={this.saveRestaurant}>Save</button>:
+              <button onClick={this.deleteRestaurant}>Delete</button>
+            }
+          </StoreInformation>
           <Image src={restaurant.image_url} />
+        </InnerCard>
       </Card>
     ) 
   }

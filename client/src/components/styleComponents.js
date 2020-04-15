@@ -161,20 +161,46 @@ export const MenuList = styled.ul `
 `;
 
 export const Card = styled.div`
-  display: flex;
-  justify-content: space-between;
   margin: 20px 0px;
-  border: 1px grey;
-  img {
-    height: auto;
-    width: 50%;
+  display: block;
+  width: 100%;
+`
+
+export const InnerCard = styled.div`
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+`
+
+export const StoreInformation = styled.div`
+  padding: 10px;
+  min-width: 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  span {
+    margin: 2px;
+    border: 1px solid black;
   }
-  div {
-    cursor: pointer;
+  * {
+    font-family: "Roboto";
+  }
+  button {
+    display: block;
+  }
+  h2 {
+    font-size: 30px;
+    padding-bottom: 5px;
+  }
+  img {
+    height: 100%;
+    width: 50%;
   }
 `
 
 export const Image = styled.div`
+  flex-grow: 1;
   background: url(${props => props.src});
   background-size: cover;
   width: 40%;
