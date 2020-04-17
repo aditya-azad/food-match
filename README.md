@@ -12,8 +12,8 @@ Search restaurants near you. <br>
 
 ## Screenshots
 ### Main page
-![Main page]("./client/src/assets/main-page.PNG")
+![Main page](./client/src/assets/main-page.PNG)
 ### Search Results page
-![Search results]("./client/src/assets/search-page.PNG")
+![Search results](./client/src/assets/search-page.PNG)
 ### Map 
-![Map]("./client/src/assets/map-page.PNG")
+![Map](./client/src/assets/map-page.PNG)
