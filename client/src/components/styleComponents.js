@@ -1,24 +1,6 @@
 import styled from 'styled-components';
 import mainPageImage from "../assets/main-pic.jpg";
 import { createGlobalStyle } from 'styled-components';
-import { css } from 'styled-components';
-
-const sizes = {
-  giant: 1440,
-  desktop: 1000,
-  tablet: 768,
-  phone: 376,
-};
-
-export const media = Object.keys(sizes).reduce((accumulator, label) => {
-  const emSize = sizes[label] / 16;
-  accumulator[label] = (...args) => css`
-    @media (max-width: ${emSize}em) {
-      ${css(...args)};
-    }
-  `;
-  return accumulator;
-}, {});
 
 export const MainPageContainer = styled.div`
   width: 100%;
@@ -188,6 +170,13 @@ export const StoreInformation = styled.div`
   }
   button {
     display: block;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
   }
   h2 {
     font-size: 30px;
@@ -197,6 +186,7 @@ export const StoreInformation = styled.div`
     height: 100%;
     width: 50%;
   }
+
 `
 
 export const Image = styled.div`
@@ -228,13 +218,16 @@ export const Popup = styled.div`
 
 export const InnerPopup = styled.div`
   position: absolute;
-  left: 25%;
-  right: 25%;
-  top: 25%;
-  bottom: 25%;
+  display: flex;
+  left: 10%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
   margin: auto;
-  border-radius: 20px;
   background: white;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `
 
 export const Message = styled.div`
@@ -250,6 +243,13 @@ export const Message = styled.div`
   a {
     color: black;
     text-decoration: underline;
-
   }
+`
+
+export const SaveButton = styled.button`
+  background-color: #4CAF50;
+`
+
+export const DeleteButton = styled.button`
+  background-color: #f44336;
 `

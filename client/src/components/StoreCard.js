@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import StorePopup from './StorePopup';
-import { Image, Card, InnerCard, StoreInformation } from './styleComponents';
+import { Image, Card, InnerCard, StoreInformation, SaveButton, DeleteButton } from './styleComponents';
 import { connect } from 'react-redux';
 
 class StoreCard extends Component {
@@ -10,7 +10,8 @@ class StoreCard extends Component {
     super(props);
     this.state = {
       showPopup: false,
-      showSaveButton: this.props.auth.restaurants.indexOf(this.props.restaurant.id) !== -1 ? false : true
+      showButton: this.props.auth ? true : false,
+      showSaveButton: this.props.auth && this.props.auth.restaurants.indexOf(this.props.restaurant.id) !== -1 ? false : true
     };
   }
 
@@ -63,12 +64,14 @@ class StoreCard extends Component {
               <h2 style={{cursor: "pointer"}} onClick={this.openPopup}>{restaurant.name}</h2>  
               <p>{restaurant.location.address1}</p>
               <p>{restaurant.location.city}, {restaurant.location.state}</p>
-              <p>{restaurant.display_phone}</p>
+              <p style={{paddingBottom: "10px"}}>{restaurant.display_phone}</p>
               {this.renderCategories()}
             </div>
-            { this.state.showSaveButton ?
-              <button onClick={this.saveRestaurant}>Save</button>:
-              <button onClick={this.deleteRestaurant}>Delete</button>
+            { this.state.showButton ?
+                (this.state.showSaveButton ?
+                  <SaveButton onClick={this.saveRestaurant}>Save</SaveButton>:
+                  <DeleteButton onClick={this.deleteRestaurant}>Delete</DeleteButton>):
+                <></>
             }
           </StoreInformation>
           <Image src={restaurant.image_url} />

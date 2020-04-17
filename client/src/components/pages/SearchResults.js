@@ -9,7 +9,7 @@ class SearchResults extends Component {
   
   renderRestaurants() {
     return (
-      <div>
+      <div style={{width: "100%", padding: "5px"}}>
         {this.props.restaurants.map((item, index) => (
           <StoreCard key={index} restaurant={item} />
         ))}

@@ -55,7 +55,7 @@ class StoreMap extends Component {
 
   render() {
     return(
-      <MapContainer id='map'></MapContainer>
+        <MapContainer id='map'></MapContainer>
     )
   }
 

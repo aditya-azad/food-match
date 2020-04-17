@@ -1,8 +1,0 @@
-- UI
-  - Profile don't update after adding restaurant to the user
-  - Store cards 
-  - Main page
-  - Click outside the box in search results to go back
-  - On mobile, some way to go back to search results after clicking the store
-  - A loading animation before data loads react
-  - Responsiveness

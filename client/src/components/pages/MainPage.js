@@ -63,17 +63,6 @@ class MainPage extends Component {
               </form>
             </CoverContent>
           </Cover>
-          <FeaturesSection>
-            <div>
-              <p>Get directions to restaurants near you</p>
-            </div>
-            <div>
-              <p>Receive recommendations based on your tastes</p>
-            </div>
-            <div>
-              <p>Save your favourite restaurants</p>
-            </div>
-          </FeaturesSection>
         </MainPageContainer>
       </Layout>
     );

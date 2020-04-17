@@ -45,7 +45,7 @@ class Profile extends Component {
 
   renderRestaurants() {
     return (
-      <div style={{width: "100%"}}>
+      <div style={{width: "100%", padding: "5px"}}>
         {this.state.restaurants.map((item, index) => (
           <StoreCard key={index} restaurant={item} />
         ))}

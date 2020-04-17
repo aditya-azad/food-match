@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StoreMap from './StoreMap';
-import { Popup, InnerPopup } from './styleComponents';
+import { Popup, InnerPopup,StoreInformation } from './styleComponents';
 
 class StorePopup extends Component {
 
@@ -15,15 +15,23 @@ class StorePopup extends Component {
       this.props.closePopup();
     }
   }
+
+  handleClick = () => {
+    this.props.closePopup()
+  }
   
   render() {
     return (
-      <Popup>
+      <Popup onClick={this.handleClick}>
         <InnerPopup>
-          <h1>{this.props.store.name}</h1>
-          <p>{this.props.store.location.address1}</p>
-          <p>{this.props.store.location.city}, {this.props.store.location.state}</p>
-          <p>{this.props.store.display_phone}</p>
+          <StoreInformation>
+            <div>
+              <h1>{this.props.store.name}</h1>
+              <p>{this.props.store.location.address1}</p>
+              <p>{this.props.store.location.city}, {this.props.store.location.state}</p>
+              <p>{this.props.store.display_phone}</p>
+            </div>
+          </StoreInformation>
           <StoreMap latitude={this.props.store.coordinates.latitude} longitude={this.props.store.coordinates.longitude}/>
         </InnerPopup>
       </Popup>
